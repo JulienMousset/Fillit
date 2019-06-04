@@ -14,4 +14,4 @@ A project to discover and/or familiarize yourself with a recurring problematic i
 Execute the program with the file of your choice like this : `./fillit yourfile`
 You can also use our test files located in the "TestFiles" directory.
 
-This project was realised with @Valar207.
+This project was realised with [@Valar207](https://github.com/Valar207).
