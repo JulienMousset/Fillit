@@ -6,7 +6,7 @@
 /*   By: jmousset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 09:52:47 by jmousset          #+#    #+#             */
-/*   Updated: 2019/06/04 11:50:15 by jmousset         ###   ########.fr       */
+/*   Updated: 2019/06/04 17:08:14 by jmousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int				ft_check_tetro(char *buff);
 t_board			*ft_create_board(int size);
 void			ft_free_board(t_board *board);
 void			ft_print_board(t_board *board);
+int				ft_free_buffer(char *buff, int fd);
 t_tetro			*ft_store(char *file);
 t_tetro			*ft_save_tetro(char *file, int i);
 t_tetro			ft_fill_coord(char *file, char letter, int col, int line);

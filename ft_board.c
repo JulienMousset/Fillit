@@ -6,7 +6,7 @@
 /*   By: jmousset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/01 11:25:35 by jmousset          #+#    #+#             */
-/*   Updated: 2019/06/04 11:44:19 by jmousset         ###   ########.fr       */
+/*   Updated: 2019/06/04 17:07:22 by jmousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,11 @@ void	ft_print_board(t_board *board)
 		ft_putchar('\n');
 		i++;
 	}
+}
+
+int		ft_free_buffer(char *buff, int fd)
+{
+	ft_memdel((void **)&buff);
+	close(fd);
+	return (0);
 }

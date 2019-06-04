@@ -6,7 +6,7 @@
 /*   By: vrossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 14:02:11 by vrossi            #+#    #+#             */
-/*   Updated: 2019/06/04 11:32:24 by jmousset         ###   ########.fr       */
+/*   Updated: 2019/06/04 17:10:05 by jmousset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,20 +108,17 @@ int		ft_check_file(char *file)
 	i = 0;
 	buff = ft_strnew(BUFF_SIZE);
 	fd = open(file, O_RDONLY);
-	if (fd < 0)
-		return (0);
 	while ((ret = read(fd, buff, BUFF_SIZE)))
 	{
 		buff[ret] = '\0';
 		if (ft_check_line(buff) == 0 || ft_check_char(buff) == 0 ||
 				ft_check_hash(buff) == 0 || ft_check_tetro(buff) == 0 || i > 25)
-			return (0);
+			return (ft_free_buffer(buff, fd));
 		i++;
 	}
-	if (buff[BUFF_SIZE] != '\0' || buff[BUFF_SIZE - 1] == '\n')
-		return (0);
-	if (buff[0] != '.' && buff[0] != '#')
-		return (0);
+	if (buff[BUFF_SIZE] != '\0' || buff[BUFF_SIZE - 1] == '\n' ||
+			(buff[0] != '.' && buff[0] != '#'))
+		return (ft_free_buffer(buff, fd));
 	close(fd);
 	ft_memdel((void **)&buff);
 	return (1);
