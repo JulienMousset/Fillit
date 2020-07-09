@@ -6,7 +6,7 @@
 #    By: jmousset <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/12 15:36:07 by jmousset          #+#    #+#              #
-#    Updated: 2019/06/04 10:10:31 by jmousset         ###   ########.fr        #
+#    Updated: 2020/07/09 11:05:57 by julien           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ all: $(NAME)
 
 $(NAME):
 	make -C $(LIB_PATH)
-	gcc $(FLAGS) -c $(SRCS) -I $(HDR)
+	gcc $(FLAGS) -c $(SRCS) $(HDR)
 	gcc $(FLAGS) $(OBJS) -o $(NAME) $(LIB)
 
 clean:
